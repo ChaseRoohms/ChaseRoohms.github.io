@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="style.css" rel="stylesheet">
+  <link href="CRLogo.png" rel="icon">
+  <title>Chase Roohms | Resume</title>
+  <script type="text/javascript" src="navigationResume.js"></script>
+</head>
+
+<body>
+<div onclick="toggleNav(this)" class="container">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+  <input type="button">
+</div>
+
+<div id="mySidenav" class="sidebarMenu">
+  <ul class="sidebarMenuInner">
+    <li>Chase Roohms <span>Software Engineer</span></li>
+    <li><a href="index.html">About Me</a></li>
+    <li><a id = "active" class = "activeLink" href="resume.html">Resume</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="https://github.com/ChaseRoohms" target="_blank">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/chaseroohms/" target="_blank">Linkedin</a></li>
+    <li><a href="https://instagram.com/chaseroohms" target="_blank">Instagram</a></li>
+  </ul>
+</div>
+
+<div class="header"><h2 class = "headerText">My Resume</h2></div>
+
+<!-- Content to be pushed by side menu -->
+<div id="mainResume">
+
+  <div id='center' class="mainResume center">
+
+    <div class="mainInnerResume">
+      <div>
+        <h1>Chase Roohms</h1>
+        <p class = "bold" style = "text-align: center; margin-bottom: 0">CS Major focusing on software engineering</p>
+        <p style = "text-align: center; margin-bottom: 0">linkedin.com/in/chaseroohms | github.com/ChaseRoohms</p>
+        <p style = "text-align: center; margin-bottom: -50px">chaseroohms@gmail.com | (512) 632 4232 | Austin Texas</p>
+
+        <br/>
+
+        <!-- TECHNICAL SKILLS -->
+        <h2>Technical Skills</h2>
+        <hr/>
+        <div style = "margin-bottom: 0; width:100%; margin-left:0; margin-right: 0; display: inline-block">
+          <div  class = "columnLeft">
+            <p class = "bold"> Languages</p>
+            <p class = "italic"> Working Knowledge:</p>
+            <p>&emsp; Java, C++</p>
+            <p class = "italic"> Familiar: </p>
+            <p>&emsp; Python, Swift, HTML, CSS</p>
+          </div>
+
+          <div class = "columnRight">
+            <p class = "bold"> Frameworks and Other Tech</p>
+            <p class = "italic"> Working Knowledge:</p>
+            <p>&emsp; Swing, Apache POI, Various APIs</p>
+            <p class = "italic"> Familiar: </p>
+            <p>&emsp; Swift UI, GNU / CLI</p>
+
+          </div>
+        </div>
+
+        <!-- PROJECTS -->
+        <h2>Relevant Experience & Projects</h2>
+        <hr/>
+        <p class = "bold" style="text-align:left;"> Professional
+          <span class = "notBold" style="float:right;"> Jan 2023 – Present
+    </span></p>
+        <p class = "italic" style="text-align:left;"> Travis County Auditor’s Office
+            <span class = "notBold" style="float:right;"> <a style = "margin: 0; padding: 0;" href="projects.html#TCReconciliation">+ More Details</a>
+    </span></p>
+        <ul>
+          <li>Designed, developed, coded and distributed a Java based application with a Swing UI to analyze and reconcile
+            balance sheets for the Travis County Auditor’s Office.</li>
+          <li>Reduced Financial Auditor Analyst VI's time to reconcile by 95%. </li>
+          <li>Innovated new capabilities to improve ease of use and accommodate required record keeping and
+            retention needs.</li>
+        </ul>
+
+        <!-- TEXAS STATE PROJECTS GO HERE
+        <p class = "bold" style="text-align:left; margin-top: 10px"> Texas State University
+          <span class = "notBold" style="float:right;"> Aug 2022 – Present
+    </span></p>
+        <p class = "italic" style="text-align:left;"> Pending Future Classes </p>
+        <ul>
+          <li> </li>
+        </ul>
+        -->
+
+        <p class = "bold" style="text-align:left; margin-top: 10px"> Personal
+          <span class = "notBold" style="float:right;"> Jan 2023 – Present
+    </span></p>
+          <p class = "italic" style="text-align:left;"> Web Scraping D&D Information : MythicMate
+              <span class = "notBold" style="float:right;"> <a style = "margin: 0; padding: 0;" href="projects.html#MythicMate">+ More Details</a>
+    </span></p>
+          <ul style = "margin-bottom: 10px">
+              <li> Designed a web scraping program that gathers Dungeons and Dragons information from a wiki, and provides it to users on Discord.</li>
+              <li> Utilized JSoup, to parse important information from webpages, and save files by page title.</li>
+              <li> Presented informtion in a neat format to users on Discord using the Java Discord API.</li>
+              <li> Expedited the searching of rules and information for gaming groups that play D&D remotely.</li>
+              <li> Can process over 1000 webpages in seconds, and can query information instantly.</li>
+          </ul>
+        <p class = "italic" style="text-align:left;"> Family Planning App
+            <span class = "notBold" style="float:right;"> <a style = "margin: 0; padding: 0;" href="projects.html#FamApp">+ More Details</a>
+    </span></p>
+        <ul style = "margin-bottom: 10px">
+          <li> Designed, developed, coded, and distributed a family organizing application in Swift.</li>
+          <li> Utilized arrays to store and share memories, coordinate important dates, and make plans for the future.
+          </li>
+        </ul>
+        <!-- WORK EXPERIENCE -->
+        <h2>Previous Work Experience</h2>
+        <hr/>
+        <p class = "bold" style="text-align:left;"> Chilis
+          <span class = "notBold" style="float:right;"> Dec 2017 – Present
+    </span></p>
+        <ul>
+          <li>Promoted 4 times in the span of one year to the Lead Bartender position.</li>
+          <li>Awarded over 20 “Above The Line” recognitions for my exemplary leadership and management skills in a
+            fast-paced, customer first work environment.</li>
+          <li>Managed and ordered inventory.</li>
+          <li>Trained new employees.</li>
+          <li>Implemented new product rollouts.</li>
+
+        </ul>
+
+          <!-- EDUCATION -->
+          <h2>Education</h2>
+          <hr/>
+          <p class = "bold" style="text-align:left;"> Texas State University, San Marcos
+              <span class = "notBold" style="float:right;"> Expected May 2024
+    </span></p>
+          <p style="text-align:left;"> BA in Computer Science
+              <span style="float:right;"> Business Minor
+    </span></p>
+
+          <p class = "bold">GPA:
+              <span class = "notBold"> 3.26
+    </span></p>
+
+          <p class = "bold">Relevant Coursework:
+              <span class = "notBold">Data Structures & Algorithms, Object-Oriented Programming, Software Engineering, Theory of Automata, Computer Networks, Computer Architecture, Cyber Security
+        </span>
+              <br/><br/>
+          </p>
+
+          <hr style = "margin: 0">
+        <p class = "bold"> Work Eligibility:
+          <span class = "notBold"> Eligible to work in the U.S. with no restrictions
+    </span></p>
+
+          <p class = "bold"> Note:
+              <span class = "notBold"> Written in HTML, view the full site at chaseroohms.github.io
+    </span></p>
+
+        <br/>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
