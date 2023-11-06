@@ -237,7 +237,7 @@ input[type=button]{
     width: 45px;
     padding: 0;
     position: fixed;
-    z-index: 4;
+    z-index: 6;
 }
 .bar1 {
     box-sizing: border-box;
@@ -249,7 +249,7 @@ input[type=button]{
     top: 16px;
     left: 16px;
     transition: 0.4s;
-    z-index: 2;
+    z-index: 5;
 }
 .bar2 {
     box-sizing: border-box;
@@ -261,7 +261,7 @@ input[type=button]{
     top: 26px;
     left: 16px;
     transition: 0.4s;
-    z-index: 2;
+    z-index: 5;
 }
 .bar3 {
     box-sizing: border-box;
@@ -273,7 +273,7 @@ input[type=button]{
     left: 16px;
     margin: 0;
     transition: 0.4s;
-    z-index: 2;
+    z-index: 5;
 }
 /* Rotate first bar */
 .change .bar1 {
@@ -294,7 +294,7 @@ input[type=button]{
     height: 100%;
     width: 0; /* Change this with JavaScript */
     position: fixed;
-    z-index: 0;
+    z-index: 2;
     top: 0;
     left: 0;
     background: linear-gradient(180deg, var(--mainGray) 0%, var(--gray) 100%);
@@ -498,11 +498,11 @@ a.icon:active {
 @media screen and (max-device-width: 750px) {
     #main{
         padding: 0;
-        margin: 0;
+        margin: 40px 0;
     }
     .main{
         padding: 0;
-        margin: 80px auto;
+        min-width: unset;
     }
     #mainResume{
         padding: 0;
@@ -512,7 +512,14 @@ a.icon:active {
         padding: 0;
         margin: 80px auto;
     }
-
+    .splitLeft{
+        width: 100%;
+        float: unset;
+    }
+    .splitRight{
+        width: 100%;
+        float: unset;
+    }
     .header{
         height: 100px;
     }
