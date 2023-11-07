@@ -103,8 +103,47 @@ span {
     height: 60px;
     top: 0;
     overflow: hidden;
+    z-index: 1;
+    color: var(--offWhite);
+}
+.portfolioContainer{
+    height: 400px;
+    margin: 0;
+    padding: 0;
+    width: 100%
+}
+
+.sideHeader {
+    background-color: var(--mainGray);
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    max-width: 50px;
+    white-space: nowrap;
+}
+.sideHeader.left {
+    float: left;
+    border-right: 1px solid var(--offWhite);
+}
+.sideHeader.right {
+    float: right;
+    border-left: 1px solid var(--offWhite);
+}
+.sideText{
     z-index: 0;
     color: var(--offWhite);
+    margin: auto;
+    font-size: xx-large;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+}
+
+.sideText.left{
+    transform: rotate(270deg);
+}
+.sideText.right{
+    transform: rotate(90deg);
 }
 .headerText{
     margin: 8px 10px;
@@ -213,7 +252,7 @@ body {
 .bubble{
     display: block;
     padding: 10px;
-    margin: 0 0px 10px 0px;
+    margin: 0 0 10px 0;
     background-color: var(--mainGray);
     border-radius: 10px;
     text-align: left;
@@ -367,13 +406,17 @@ img.stretchy {
     font-size: xx-large;
 }
 div.scroll-container {
+    padding: 10px;
     background-color: var(--mainGray);
-    overflow: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
     white-space: nowrap;
     margin-top: 0;
+    height: 100%;
 }
 div.scroll-container img {
-    padding: 10px;
+    margin: auto;
+    padding: 0;
     height: 100%;
     max-height: 400px;
 }
