@@ -70,34 +70,50 @@
 
                 <p class="bold"> Overview</p>
                 <p>My friends and I got into playing the Table Top Game, Dungeons and Dragons a few years ago, and it
-                    has been one of the main reasons that we have been able to stay in touch as people have begun to move away
+                    has been one of the main reasons that we have been able to stay in touch as people have begun to
+                    move away
                     from home. As the distance between us spread, we had to move from meeting in person to playing on
                     Discord, and the resources are lacking. There are dice rolling bots out there, but they are very
                     specific with input, there are information bots out there, but they require paid accounts to use, I
                     decided to use my skills to my advantage and make what we had all been wanting. A simple, easy to
-                    use, highly functional discord bot: MythicMate</p>
+                    use, highly functional D&D Companion: MythicMate</p>
 
                 <p style="margin-top: 10px;" class="bold"> Dice Rolling</p>
                 <p style="margin-bottom: 20px">When you are in the middle of a game, you don't want to have to remember
                     the complex syntax of commands, or worry about a misspelling ruining your flow, you want fast and
                     effective. For the dice rolling commands, MythicMate accepts any length of dice, and displays what
-                    each one rolled for dramatic effect. It sorts through your input, splitting it by plus signs, and
-                    removing any spaces that might cause issue. If the bot for some reason does not recognize a symbol,
-                    it will still roll your dice and alert you of the error! No more pausing to ask "How do I roll
-                    again?"</p>
+                    each one rolled for dramatic effect. It sorts through your input with regex, and if the bot for
+                    some reason does not recognize a symbol, it will still roll your dice and alert you of the
+                    error! No more pausing to ask "How do I roll again?"</p>
                 <div class="imgContainer"><img src="DiceSample2.png" alt="DiceSample" class="stretchy"/></div>
                 <br/>
                 <p style="margin-top: 10px;" class="bold"> Web Scraping</p>
                 <p style="margin-bottom: 20px">A lot of D&D content is locked behind a paywall, but there are user ran
                     sites like the DND5eWikiDot, that you can gather the important things from like rules, and spell
-                    details. When I run the password locked "/update" command, it searches through the links on the
-                    homepage of this wiki, and pulls information from them, saving them as text files formatted in
-                    Discords markdown on my computer. When a user wants to look up something, it references the
+                    details. When I run the update command, it searches this wiki, and pulls the relevant information
+                    from it, saving it as text files formatted in Discords markdown on my computer. When a user wants to
+                    look up something, it references the
                     available text files, and offers autocomplete suggestions. The files are then simply passed into a
                     discord message with no further formatting needed, because it is all taken care of when scraping the
                     data. This results in lightning fast searches.</p>
 
-                <!--<div class="imgContainer"><img src="TCReport.png" alt="Functionality Example" class="stretchy"/></div>-->
+                <p style="margin-top: 10px;" class="bold"> AI Integration</p>
+                <p style="margin-bottom: 20px">While a lot of information about D&D is locked behind a paywall, even
+                    more of it is scattered across random iterations of rule books, and source material. Utilizing
+                    ChatGPT's interface, and precise preformatted instruction, I have created the "/ask" command. The
+                    user simply types "/ask" and then their question, and my bot accesses the API and runs a formatted
+                    request. The answer is then quickly returned in a message for them.</p>
+
+                <div class="imgContainer"><img src="chatGPT.png" alt="ChatGPT Integration" class="stretchy"/></div>
+
+                <p style="margin-top: 10px;" class="bold"> Multithreaded Implementation</p>
+                <p style="margin-bottom: 20px">A Discord bot with AI integration is great until you realize the
+                    processing delays involved with AI, specifically ChatGPT's API. When one user had a hanging request
+                    for an AI generated rules check, no other user was capable of running commands. To solve this I
+                    implemented multithreading, allowing each command to create and run on a new thread as soon as it is
+                    called, keeping the main bot free to process incoming commands.</p>
+
+
                 <!-- Travis County -->
                 <a class="anchor" id="TCReconciliation"></a>
                 <h2>Travis County</h2>
@@ -111,23 +127,15 @@
 
                 <p class="bold"> Overview</p>
                 <p>My lovely mother works for Travis County, and holds the title of Financial Auditor Analyst VI. One of
-                    her
-                    monthly responsibilities is reconciling last month's account balance sheets against the current
-                    months.
-                    She methodically searches through both 200 line Excel files, checking to make sure the ending
-                    balances of
-                    last month matches the initial balances of this month. She then goes back through the current
-                    month's file
-                    a second time, to check if any of the accounts have been listed twice.
-                    <br/><br/>
-                    While visiting her while she was working from home, I noticed her keeping her face mere inches
-                    from her computer screen. I asked her what she was doing, and she explained to me the painstaking
-                    task of
-                    sorting through these two files. According to her, it takes her around 90 minutes to do this every
-                    month.
-                    I asked her, "Mom, why don't they have a program for something like that?" She told me she didn't
-                    even
-                    know it was an option.</p>
+                    her monthly responsibilities is reconciling last month's account balance sheets against the current
+                    months. She methodically searches through both 200 line Excel files, checking to make sure the
+                    ending balances of last month matches the initial balances of this month. She then goes back through
+                    the current month's file a second time, to check if any of the accounts have been listed twice.
+                    <br/><br/>While visiting her while she was working from home, I noticed her keeping her face mere
+                    inches from her computer screen. I asked her what she was doing, and she explained to me the
+                    painstaking task of sorting through these two files. According to her, it takes her around 90
+                    minutes to do this every month. I asked her, "Mom, why don't they have a program for something like
+                    that?" She told me she didn't even know it was an option.</p>
 
                 <p style="margin-top: 10px" class="bold"> Constraints</p>
                 <p>These two Excel spreadsheets are generated by their Odyssey database, so there a few things that are
@@ -142,48 +150,33 @@
 
                 <p style="margin-top: 10px;" class="bold"> The Solution</p>
                 <p style="margin-bottom: 20px">Step one was to teach myself Apache POI. I had done file manipulation
-                    prior to this, but parsing through
-                    Excel files in Java without some outside help was too big of a task. I fired up a Maven managed
-                    project and
-                    got to work pouring over documentation and tutorials. Once I had a firm grasp on the various Objects
-                    and
-                    Methods the technology provided, I was ready to move on.
+                    prior to this, but parsing through Excel files in Java without some outside help was too big of a
+                    task. I fired up a Maven managed project and got to work pouring over documentation and tutorials.
+                    Once I had a firm grasp on the various Objects and Methods the technology provided, I was ready to
+                    move on.
                     <br/><br/>
                     Step two was navigating the files. This would have been easy if I thought I could trust that the
-                    files were
-                    identical, but even one file that didn't fit the mold would cause issues on the user - the exact
-                    thing this
-                    program is intended to prevent. I decided instead to play it safe, and navigate through the file the
-                    way
-                    my mom does: Titles. The program searches through the document until it finds column titles, and
-                    stores the
-                    index of any columns required for our algorithms. It then does the same with the row labels, storing
-                    those
-                    containing information the algorithm needs.
+                    files were identical, but even one file that didn't fit the mold would cause issues on the user -
+                    the exact thing this program is intended to prevent. I decided instead to play it safe, and navigate
+                    through the file the way my mom does: Titles. The program searches through the document until it
+                    finds column titles, and stores the index of any columns required for our algorithms. It then does
+                    the same with the row labels, storing those containing information the algorithm needs.
                     <br/><br/>
                     Step three was the logic. The minute I heard duplicates, my mind went to unordered sets. I was
-                    sitting
-                    down to implement this solution when I remembered an important constraint for the data. The order of
-                    accounts
-                    was always going to be identical, meaning if there were duplicate accounts they would be located on
-                    top of
-                    one another. A single for loop provided a bulletproof solution. The solution I originally planned
-                    with an
-                    unordered set had a time complexity and space complexity of O(n) where n is the number of accounts
-                    in the
-                    balance sheet. The iterative solution has the same time complexity, has a space complexity of O(1)
-                    as it
-                    creates no new space. The checking of initial versus ending balances works the same way, iterating
-                    through
-                    both files simultaneously, and comparing their values.
+                    sitting down to implement this solution when I remembered an important constraint for the data. The
+                    order of accounts was always going to be identical, meaning if there were duplicate accounts they
+                    would be located on top of one another. A single for loop provided a bulletproof solution. The
+                    solution I originally planned with an unordered set had a time complexity and space complexity of
+                    O(n) where n is the number of accounts in the balance sheet. The iterative solution has the same
+                    time complexity, has a space complexity of O(1) as it creates no new space. The checking of initial
+                    versus ending balances works the same way, iterating through both files simultaneously, and
+                    comparing their values.
                     <br/><br/>
                     Step four was the user interface. Console ran programs are fine for my personal use, but for the
-                    average user,
-                    interface is important. I taught myself how to use Java Swing, to implement a navigable UI, and of
-                    course to
-                    make it visually pleasing. The UI allows the user to select their files, and generate a report. This
-                    report
-                    can be saved as a text file, for easy access in the future.</p>
+                    average user, interface is important. I taught myself how to use Java Swing, to implement a
+                    navigable UI, and of course to make it visually pleasing. The UI allows the user to select their
+                    files, and generate a report. This report can be saved as a text file, for easy access in the
+                    future.</p>
 
                 <div class="imgContainer"><img src="TCReport.png" alt="Report UI" class="stretchy"/></div>
                 <br/>
@@ -202,26 +195,20 @@
                 <p class="bold"> Overview</p>
                 <p>My girlfriend and I have been together for six years now, and last year when I really started getting
                     confident in my coding abilities, I decided to teach myself some Swift and make her an app. It's
-                    cheesy, but
-                    doing things like this for people I love is one of my favorite ways of showing affection.</p>
+                    cheesy, but doing things like this for people I love is one of my favorite ways of showing
+                    affection.</p>
 
                 <p style="margin-top: 10px;" class="bold"> The App</p>
                 <p style="margin-bottom: 20px">I wanted the app to do a few things, remind us of important dates, remind
-                    us
-                    that we care about one another, show us some of our favorite memories, and remind us of our plans
-                    for the
-                    future. The logic is nothing too complex, the date reminder gets the local time and date from the
-                    phone it's
-                    on, and compares it to the stored date (our anniversary). The other three functions have their own
-                    array, of
-                    either text, images, or both. A random number generator pulls an index from the available ranges,
-                    and displays
-                    the contents I put in that array.
+                    us that we care about one another, show us some of our favorite memories, and remind us of our plans
+                    for the future. The logic is nothing too complex, the date reminder gets the local time and date
+                    from the phone it's on, and compares it to the stored date (our anniversary). The other three
+                    functions have their own array, of either text, images, or both. A random number generator pulls an
+                    index from the available ranges, and displays the contents I put in that array.
                     <br/><br/>
                     In the future I would like to make this app customizable, and usable by anyone. I plan on adding a
-                    new page
-                    to navigate to, where a user can upload their own images and memories, or change their important
-                    date.</p>
+                    new page to navigate to, where a user can upload their own images and memories, or change their
+                    important date.</p>
                 <br/>
             </div>
             <div class="splitRight" style="position: sticky; top: 80px; z-index: 0; margin-top: 140px">
@@ -231,10 +218,10 @@
                 </a>
                 <a href="#MythicMate" class="bubble">
                     <h3>MythicMate</h3>
-                    A Discord companion for Dungeons and Dragons.
+                    An AI companion for Dungeons and Dragons.
                     <br>
                     <div class="bubbleFooter">
-                        Java, JSoup, Java Discord API, Apache Commons
+                        Java, JSoup, Java Discord API, ChatGPT API, Apache Commons
                     </div>
                 </a>
                 <a href="#TCReconciliation" class="bubble">
